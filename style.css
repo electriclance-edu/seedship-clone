@@ -6,6 +6,10 @@
     --c-bg0-3:rgba(1, 0, 7,0.3);
     --c-main:rgb(21, 18, 31);
     --c-txt:white;
+    --c-blue:rgb(143, 229, 255);
+    --c-green:rgb(101, 255, 183);
+    --c-yellow:rgb(255, 229, 144);
+    --c-red:rgb(255, 150, 168);
 }
 body {
     margin:0;
@@ -47,10 +51,9 @@ body {
     font-size:32px;
     color:var(--c-txt);
 }
-.lexend span, .lexend br {
+.lexend span, .lexend br, .lexend p {
     font-family: "Lexend", sans-serif;
-    font-size:0.7em;
-    line-height:0.5em;
+    font-size:0.8em;
 }
 body .smallHeader {
     font-size:0.5em;
@@ -98,9 +101,15 @@ body .smallHeader {
     margin-right:auto;
     display: flex;
     flex-direction: column-reverse;
-    background:linear-gradient(0deg, rgba(0,0,0,0) 0%, var(--c-bg0-3) 25%, var(--c-bg0-3) 75%, rgba(0,0,0,0) 100%);
+    background:linear-gradient(0deg, rgba(0,0,0,0) 10%, var(--c-bg0-3) 35%, var(--c-bg0-3) 65%, rgba(0,0,0,0) 90%);
     text-shadow:0 0 7px rgba(255,255,255,0.5);
     mask-image:linear-gradient(0deg, rgba(0,0,0,0) 0%, black 5%, black 95%, rgba(0,0,0,0) 100%);
+}
+.Middle > p {
+    margin:10px 0;
+}
+.Middle > *:first-child {
+    margin-bottom:100px;
 }
 .Bottom {
     height:200px;
@@ -140,10 +149,53 @@ body .smallHeader {
 .effect-chrome {
     filter:drop-shadow(3px 2px 1px rgba(255, 0, 64 ,0.8)) drop-shadow(-2px -1px 1px rgba(0, 26, 255, 0.6));
 }
+.counter {
+    font-weight:bold;
+}
 @keyframes fadein {
     from {
         opacity:0;
+        filter:blur(2px) drop-shadow(6px 4px 3px rgb(255, 0, 64)) drop-shadow(-4px -2px 3px rgb(0, 26, 255));
     } to {
         opacity:1;
+        filter:none;
     }
+}
+span.state-blue, p.state-blue {
+    color:var(--c-blue);
+}
+span.state-green, p.state-green {
+    color:var(--c-green);
+}
+span.state-yellow, p.state-yellow {
+    color:var(--c-yellow);
+}
+span.state-red, p.state-red {
+    color:var(--c-red);
+}
+.land {
+    margin-top:30px;
+}
+.land p {
+    margin:0;
+}
+.land > p {
+    text-align:center;
+    font-weight:bold;
+}
+.land-columns {
+    display:flex;
+    width:100%;
+}
+.land-leftCol {
+    flex-grow:1;
+    text-align:right;
+    padding-right:10px;
+    flex-basis:0;
+}
+.land-rightCol {
+    flex-grow:1;
+    text-align:left;
+    padding-left:10px;
+    flex-basis:0;
 }
