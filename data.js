@@ -63,6 +63,7 @@ var allSituations = {
         )
     ),
     first:new Situation(
+        new Log("function",()=>{Player.incrementStat("years",randInt(100) + 50)}),
         "The Infinite Ocean extends far into the darkness. As you walk, a part of you is aware of the emptiness of it; water upon water upon water. But humanity wrote of myths of lands beyond it, of islands that could possibly host civilization once more. You set your eyes, finally, on the proof of this myth.",
         new Log("land"),
         new Log(

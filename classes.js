@@ -26,7 +26,7 @@ class Situation {
     constructor() {
         for (var i = 0; i < arguments.length; i++) {
             let item = arguments[i];
-            if (typeof item == "string") item = new Log(i == 0 ? "reset" : null,item);
+            if (typeof item == "string") item = new Log("reset",item);
             this.logs.push(item);
         }
     }
@@ -37,7 +37,7 @@ class Log {
     // reset [clears the log first]
     // choice [displays choices at the bottom]
     data;
-    constructor(type="add") {
+    constructor(type = "reset") {
         this.type = type;
         this.data = [...arguments];
         this.data.shift();

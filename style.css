@@ -173,6 +173,17 @@ span.state-yellow, p.state-yellow {
 span.state-red, p.state-red {
     color:var(--c-red);
 }
+.counter.state-changed {
+    animation:5s forwards flash;
+}
+@keyframes flash {
+    from {
+        filter:drop-shadow(0 0 10px white) drop-shadow(0 0 20px white);
+    }
+    to {
+        filter:drop-shadow(0 0 0px transparent);
+    }
+}
 .land {
     margin-top:30px;
 }

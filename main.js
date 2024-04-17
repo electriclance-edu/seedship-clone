@@ -99,6 +99,8 @@ function displayLog(log) {
 
         container.prepend(landElem);
 
+    } else if (log.type == "function") {
+        log.data[0]();
     } else {
         console.group("displayLog():");
         console.warn(`Received log of type "${log.type}", however no such log type exists. As such, did nothing. Full log object is as follows:`);
@@ -123,6 +125,11 @@ function updateStatElem(stat) {
         elem.innerHTML = stat.value + "%";
         elem.classList.add(`state-${stat.getState()}`);
     }
+
+    elem.classList.remove("state-changed");
+    setTimeout(()=>{
+        elem.classList.add("state-changed");
+    },16);
 }
 function randElem(arr) {
     return arr[randInt(arr.length - 1)];
